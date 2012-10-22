@@ -7,18 +7,30 @@
 <% end %>
 
   <head>
-    <meta charset="utf-8"/> 
+    <meta charset="utf-8"/>
     <title>Jukebox</title>
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <link href="/application.css" rel="stylesheet">
   </head>
 
   <body>
-    <div id="application"></div>
+    <script type="x-template" id="track-template">
+      <div class="info">
+        <span class="track-name"></span>
+        by
+        <span class="track-artist"></span>
+        from the album <span class="track-album"></span>
+      </div>
+      <div class="actions"></div>
+    </script>
+
+    <section>
+      <input id="search" autofocus=true type="text" size="100"
+        placeholder="Type to search" />
+      <ul id="results"></ul>
+    </section>
+
+
 
     <% app.config.scripts.each do |script| %>
       <script src="<%= script %>"></script>
