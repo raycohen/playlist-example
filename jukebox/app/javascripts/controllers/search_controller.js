@@ -37,14 +37,9 @@ Jukebox.searchController = {
     console.log('displayResults', data);
     if (data && data.tracks) {
 
-      data.tracks.forEach(function(track) {
-        var trackInfo = {
-          name: track.name,
-          artist: track.artists[0].name,
-          album: track.album.name
-        };
-
-        tracks.push(trackInfo);
+      data.tracks.forEach(function(trackData) {
+        var track = new Jukebox.Track(trackData);
+        tracks.push(track);
       });
     }
     Jukebox.searchResultsView.displayTracks(tracks);

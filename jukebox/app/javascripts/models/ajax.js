@@ -32,7 +32,3 @@ Jukebox.Ajax.prototype = {
     }
   }
 }
-
-
-
-

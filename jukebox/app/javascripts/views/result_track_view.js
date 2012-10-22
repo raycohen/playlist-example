@@ -19,9 +19,6 @@ Jukebox.ResultTrackView.prototype = {
   },
   teardown: function() {
     /* remove event listeners */
-  }
+  },
+  template: document.getElementById('track-template').innerHTML
 };
-
-Jukebox.ResultTrackView.prototype.template = document.getElementById('track-template').innerHTML;
-
-

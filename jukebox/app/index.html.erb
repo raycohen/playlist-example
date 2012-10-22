@@ -24,10 +24,30 @@
       <div class="actions"></div>
     </script>
 
-    <section>
-      <input id="search" autofocus=true type="text" size="100"
+    <script type="x-template" id="playlist-template">
+      <div class='playlist-name'></div>
+      <div class='playlist-actions'>
+        <a href="javascript:void(0)" class="select-playlist">Select</a>
+        <span class="playlist-is-selected">Selected!</span>
+        <a href="javascript:void(0)" class="delete-playlist">Delete</a>
+        <a href="javascript:void(0)" class="rename-playlist">Rename</a>
+      </div>
+      <ul class='playlist-tracks'></ul>
+    </script>
+
+    <section id="left-col">
+      <input id="search" autofocus=true type="text"
         placeholder="Type to search" />
       <ul id="results"></ul>
+    </section>
+
+    <section id="right-col">
+      <div>
+        <input id="create-playlist-name" type="text" placeholder="Enter a name for a new playlist"/>
+        <a id="create-playlist" href="javascript:void(0)">Create Playlist</a>
+      </div>
+      <h3>My Playlists:</h3>
+      <ul id="playlists"></ul>
     </section>
 
 

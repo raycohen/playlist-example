@@ -6,3 +6,55 @@
 // "app/stylesheets" in the final compiled "application.css" file.
 //
 // Your stylesheet begins here ...
+
+#left-col {
+  width: 50%;
+  float: left;
+}
+
+#right-col {
+  width: 50%;
+  float: left;
+}
+
+#search {
+  font-size: 32px;
+  width: 90%;
+}
+
+.track-name, .track-artist {
+  font-weight: bold;
+}
+
+.track-album {
+  font-style: italic;
+}
+
+#create-playlist-name {
+  font-size: 22px;
+  width: 70%;
+}
+
+.playlist-is-selected {
+  display: none;
+}
+
+.playlist.selected {
+  .playlist-is-selected {
+    display: inline;
+  }
+  .select-playlist {
+    display: none;
+  }
+}
+
+ul {
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+}
+ul li {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0px;
+  border-bottom: 1px solid #aaa;
+}

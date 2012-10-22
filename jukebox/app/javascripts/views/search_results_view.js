@@ -1,7 +1,7 @@
 Jukebox.searchResultsView = {
   trackViews: [],
   displayTracks: function(tracks) {
-    this.cleanup();
+    this.empty();
 
     tracks.forEach(function(track) {
       var trackView = new Jukebox.ResultTrackView(track);
@@ -9,7 +9,7 @@ Jukebox.searchResultsView = {
       this.element.appendChild(trackView.getElement());
     }, this);
   },
-  cleanup: function() {
+  empty: function() {
     this.trackViews.forEach(function(trackView) {
       trackView.teardown();
     });
