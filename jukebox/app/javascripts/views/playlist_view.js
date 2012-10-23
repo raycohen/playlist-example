@@ -38,7 +38,7 @@ Jukebox.PlaylistView.prototype = {
   },
   rerender: function() {
     this.teardownEventListeners();
-    var selected, oldElement = this.element;
+    var selected, oldElement = this.element, parent = oldElement.parentNode;
     if ([].indexOf.call(oldElement.classList, 'selected') != -1) {
       selected = true;
     }
@@ -47,7 +47,6 @@ Jukebox.PlaylistView.prototype = {
       this.element.classList.add('selected');
     }
     this.trackViews = [];
-    var parent = oldElement.parentNode;
     parent.insertBefore(this.element, oldElement);
     parent.removeChild(oldElement);
   },
