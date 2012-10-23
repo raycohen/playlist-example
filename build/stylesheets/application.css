@@ -1,0 +1,66 @@
+/* line 10, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+#left-col {
+  width: 50%;
+  float: left;
+}
+
+/* line 15, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+#right-col {
+  width: 50%;
+  float: left;
+}
+
+/* line 20, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+#search {
+  font-size: 32px;
+  width: 90%;
+}
+
+/* line 25, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+.track-name, .track-artist {
+  font-weight: bold;
+}
+
+/* line 29, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+.track-album {
+  font-style: italic;
+}
+
+/* line 33, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+#create-playlist-name {
+  font-size: 22px;
+  width: 70%;
+}
+
+/* line 38, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+.playlist-is-selected {
+  display: none;
+}
+
+/* line 42, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+.playlist.selected {
+  background-color: yellow;
+}
+/* line 45, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+.playlist.selected .playlist-is-selected {
+  display: inline;
+  font-weight: bold;
+}
+/* line 49, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+.playlist.selected .select-playlist {
+  display: none;
+}
+
+/* line 54, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+ul {
+  margin: 10px 0px 0px 0px;
+  padding: 0px;
+}
+
+/* line 58, /Users/raycohen/code/personal/playlist-example/jukebox/app/stylesheets/app.scss */
+ul li {
+  list-style-type: none;
+  padding: 5px;
+  margin: 0px;
+  border-bottom: 1px solid #aaa;
+}

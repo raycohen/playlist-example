@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+
+  <html>
+
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>Jukebox</title>
+
+    <link href="/stylesheets/application.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <script type="x-template" id="result-template">
+      <div class="info">
+        <span class="track-name"></span>
+        by
+        <span class="track-artist"></span>
+        from the album <span class="track-album"></span>
+      </div>
+      <div class="actions">
+        <a class="add-to-selected-playlist" href="javascript:void(0)">Add to selected playlist</a>
+      </div>
+    </script>
+
+    <script type="x-template" id="track-template">
+      <div class="info">
+        <span class="track-name"></span>
+        by
+        <span class="track-artist"></span>
+        (<span class="track-album"></span>)
+      </div>
+      <div class="actions">
+        <a class="remove" href="javascript:void(0)">Remove</a>
+      </div>
+    </script>
+
+    <script type="x-template" id="playlist-template">
+      <div class='playlist-name'></div>
+      <div class='playlist-actions'>
+        <a href="javascript:void(0)" class="select-playlist">Select</a>
+        <span class="playlist-is-selected">Selected!</span>
+        <a href="javascript:void(0)" class="delete-playlist">Delete</a>
+        <a href="javascript:void(0)" class="rename-playlist">Rename</a>
+      </div>
+      <ul class='playlist-tracks'></ul>
+    </script>
+
+    <section id="left-col">
+      <input id="search" autofocus=true type="text"
+        placeholder="Type to search" />
+      <ul id="results"></ul>
+    </section>
+
+    <section id="right-col">
+      <div>
+        <input id="create-playlist-name" type="text" placeholder="Enter a name for a new playlist"/>
+        <a id="create-playlist" href="javascript:void(0)">Create Playlist</a>
+      </div>
+      <h3>My Playlists:</h3>
+      <ul id="playlists"></ul>
+    </section>
+
+
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/controllers/playlist_controller.js"></script>
+    <script src="javascripts/controllers/search_controller.js"></script>
+    <script src="javascripts/views/create_playlist_view.js"></script>
+    <script src="javascripts/views/playlist_view.js"></script>
+    <script src="javascripts/views/search_view.js"></script>
+    <script src="javascripts/views/search_results_view.js"></script>
+    <script src="javascripts/views/result_track_view.js"></script>
+    <script src="javascripts/views/track_view.js"></script>
+    <script src="javascripts/models/ajax.js"></script>
+    <script src="javascripts/models/track.js"></script>
+    <script src="javascripts/models/playlist.js"></script>
+
+  </body>
+</html>
+

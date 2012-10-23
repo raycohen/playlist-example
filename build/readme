@@ -1,0 +1,20 @@
+Code Example: Song searching + Playlist Management.
+
+To Run:
+
+Serve this directory from a webserver and navigate browser to index.html.
+
+For example:
+
+# with Python
+
+> python -m SimpleHTTPServer
+open Chrome to localhost:8000/index.html
+
+
+# with Ruby
+
+> gem install 'asdf'
+> asdf
+open Chrome to localhost:9292/index.html
+
