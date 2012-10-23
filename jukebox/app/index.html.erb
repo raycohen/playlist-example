@@ -14,14 +14,28 @@
   </head>
 
   <body>
-    <script type="x-template" id="track-template">
+    <script type="x-template" id="result-template">
       <div class="info">
         <span class="track-name"></span>
         by
         <span class="track-artist"></span>
         from the album <span class="track-album"></span>
       </div>
-      <div class="actions"></div>
+      <div class="actions">
+        <a class="add-to-selected-playlist" href="javascript:void(0)">Add to selected playlist</a>
+      </div>
+    </script>
+
+    <script type="x-template" id="track-template">
+      <div class="info">
+        <span class="track-name"></span>
+        by
+        <span class="track-artist"></span>
+        (<span class="track-album"></span>)
+      </div>
+      <div class="actions">
+        <a class="remove" href="javascript:void(0)">Remove</a>
+      </div>
     </script>
 
     <script type="x-template" id="playlist-template">

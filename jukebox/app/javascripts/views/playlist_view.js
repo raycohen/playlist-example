@@ -1,5 +1,6 @@
 Jukebox.PlaylistView = function(playlist) {
   this.playlist = playlist;
+  this.playlist.playlistView = this;
   this.trackViews = [];
 };
 
@@ -12,7 +13,12 @@ Jukebox.PlaylistView.prototype = {
     this.teardownEventListeners();
     this.element.parentNode.removeChild(this.element);
     this.element = null;
+    this.playlist.playlistView = null;
+    this.trackViews = [];
     Jukebox.playlistController.destroyPlaylist(this.playlist);
+  },
+  markSelected: function() {
+    this.element.classList.add('selected');
   },
   selectClick: function() {
     var playlistElements = document.getElementsByClassName('playlist');
@@ -20,7 +26,7 @@ Jukebox.PlaylistView.prototype = {
       element.classList.remove('selected');
     });
 
-    this.element.classList.add('selected');
+    this.markSelected();
   },
   renameClick: function() {
     var newName = window.prompt("Enter a new name for this playlist");
@@ -32,8 +38,15 @@ Jukebox.PlaylistView.prototype = {
   },
   rerender: function() {
     this.teardownEventListeners();
-    var oldElement = this.element;
+    var selected, oldElement = this.element;
+    if ([].indexOf.call(oldElement.classList, 'selected') != -1) {
+      selected = true;
+    }
     this.element = this.buildElement();
+    if (selected) {
+      this.element.classList.add('selected');
+    }
+    this.trackViews = [];
     var parent = oldElement.parentNode;
     parent.insertBefore(this.element, oldElement);
     parent.removeChild(oldElement);
@@ -53,6 +66,15 @@ Jukebox.PlaylistView.prototype = {
 
     this.onSelectClick = this.selectClick.bind(this);
     li.querySelector('.select-playlist').addEventListener('click', this.onSelectClick);
+
+    li.dataset["playlistId"] = this.playlist.id;
+
+    var trackList = li.querySelector('.playlist-tracks');
+
+    this.playlist.tracks.forEach(function(track) {
+      var trackView = new Jukebox.TrackView(track, this.playlist);
+      trackList.appendChild(trackView.getElement());
+    }, this);
 
     return li;
   },

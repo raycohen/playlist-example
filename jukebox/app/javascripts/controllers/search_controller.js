@@ -3,16 +3,12 @@ Jukebox.searchController = {
   updateQuery: function(query) {
     this.query = query;
     if (this.hasRequested(query)) {
-      console.log('hasRequested', query);
       if (this.hasResultsFor(query)) {
-        console.log('hasResultsFor', query);
         return this.displayResults(query);
       } else {
-        console.log('NOT hasResultsFor', query);
         /* no results to show or Ajax is not finished */
       }
     } else {
-      console.log('NOT hasRequested', query);
       this.request(query);
     }
   },
@@ -26,7 +22,6 @@ Jukebox.searchController = {
     return !!this.results[query];
   },
   handleRequestData: function(query, data) {
-    console.log("handleRequestData", arguments);
     this.results[query] = data;
     if (this.query == query) {
       this.displayResults(query);
@@ -34,9 +29,7 @@ Jukebox.searchController = {
   },
   displayResults: function(query) {
     var tracks = [], data = this.results[query];
-    console.log('displayResults', data);
     if (data && data.tracks) {
-
       data.tracks.forEach(function(trackData) {
         var track = new Jukebox.Track(trackData);
         tracks.push(track);

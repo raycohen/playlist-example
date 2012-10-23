@@ -40,8 +40,11 @@
 }
 
 .playlist.selected {
+  background-color: yellow;
+
   .playlist-is-selected {
     display: inline;
+    font-weight: bold;
   }
   .select-playlist {
     display: none;

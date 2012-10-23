@@ -5,7 +5,6 @@ Jukebox.searchView = {
 
   onKeyUp: function() {
     var value = this.element.value.trim();
-    console.log("onKeyUp #search value is", value);
     if (value) {
       Jukebox.searchController.updateQuery(value);
     }
