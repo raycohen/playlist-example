@@ -81,6 +81,10 @@ Jukebox.PlaylistView.prototype = {
     this.element.querySelector('.delete-playlist').removeEventListener('click', this.onDeleteClick);
     this.element.querySelector('.rename-playlist').removeEventListener('click', this.onRenameClick);
     this.element.querySelector('.select-playlist').removeEventListener('click', this.onSelectClick);
+
+    this.trackViews.forEach(function(trackView) {
+      view.teardown();
+    }, this);
   },
   template: document.getElementById('playlist-template').innerHTML
 };
